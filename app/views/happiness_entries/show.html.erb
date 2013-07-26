@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Score:</b>
+  <%= @happiness_entry.score %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @happiness_entry.description %>
+</p>
+
+<p>
+  <b>User id:</b>
+  <%= @happiness_entry.user_id %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_happiness_entry_path(@happiness_entry) %> |
+<%= link_to 'Back', happiness_entries_path %>

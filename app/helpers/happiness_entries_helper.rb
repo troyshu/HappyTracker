@@ -1,0 +1,2 @@
+module HappinessEntriesHelper
+end

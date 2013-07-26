@@ -1,0 +1,27 @@
+<h1>Listing happiness_entries</h1>
+
+<table>
+  <tr>
+    <th>Score</th>
+    <th>Description</th>
+    <th>User id</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @happiness_entries.each do |happiness_entry| %>
+  <tr>
+    <td><%= happiness_entry.score %></td>
+    <td><%= happiness_entry.description %></td>
+    <td><%= happiness_entry.user_id %></td>
+    <td><%= link_to 'Show', happiness_entry %></td>
+    <td><%= link_to 'Edit', edit_happiness_entry_path(happiness_entry) %></td>
+    <td><%= link_to 'Destroy', happiness_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Happiness entry', new_happiness_entry_path %>

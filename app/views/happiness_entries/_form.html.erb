@@ -1,0 +1,29 @@
+<%= form_for(@happiness_entry) do |f| %>
+  <% if @happiness_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@happiness_entry.errors.count, "error") %> prohibited this happiness_entry from being saved:</h2>
+
+      <ul>
+      <% @happiness_entry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :score %><br />
+    <%= f.number_field :score %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
