@@ -80,4 +80,13 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def self.send_happiness_emails
+    puts "sending happiness emails..."
+    all_users = User.all()
+    all_users.each do |user|
+      puts "#{user.email}"
+      #send email to user
+    end
+  end
 end
