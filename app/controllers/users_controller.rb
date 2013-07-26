@@ -1,3 +1,5 @@
+require 'mandrill'
+
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
@@ -83,10 +85,28 @@ class UsersController < ApplicationController
 
   def self.send_happiness_emails
     puts "sending happiness emails..."
+    #m = Mandrill::API.new('xOiHqFbCRGjYDk9I1D1p_g')
+    m = Mandrill::API.new
+
     all_users = User.all()
     all_users.each do |user|
-      puts "#{user.email}"
+      
+
       #send email to user
+      message = {
+       :subject=> "[HappinessTracker] How happy were you today?",
+       :from_name=> "HappinessTracker",
+       :text=>"Hi there, First, on a scale of 1-10, with 10 being happiest, what was your happiness score today? Second, describe in a few sentences or a paragraph, what made you feel that way?",
+       :to=>[
+         {
+           :email=> "#{user.email}"
+         }
+       ],
+       :html=>"<html><h1>Hi there,</h1><p>First, on a scale of 1-10, with 10 being happiest, what was your happiness score today?</p><p>Second, describe in a few sentences or a paragraph, what made you feel that way?</p></html>",
+       :from_email=>"happinesstrackerapp@gmail.com"
+      }
+      m.messages.send message
+      puts "sent email to #{user.email}"
     end
   end
 end
