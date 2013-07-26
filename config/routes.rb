@@ -8,7 +8,7 @@ HappyTracker::Application.routes.draw do
 
   root :to => "static_pages#home"
   get "/help" => "static_pages#help"
-
+  match "/incoming_mails", :to => "incoming_mails#create", :via => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
