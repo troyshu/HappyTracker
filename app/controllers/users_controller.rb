@@ -90,11 +90,14 @@ class UsersController < ApplicationController
 
     all_users = User.all()
     all_users.each do |user|
-      
+    
+      todays_date = Time.now().strftime("%A, %B %d, %Y")
+
+      new_entry = HappinessEntry.create(user_id: user.id)
 
       #send email to user
       message = {
-       :subject=> "[HappinessTracker] How happy were you today?",
+       :subject=> "[HappinessTracker] #{todays_date}: How happy were you today?",
        :from_name=> "HappinessTracker",
        :text=>"Hi there, First, on a scale of 1-10, with 10 being happiest, what was your happiness score today? Second, describe in a few sentences or a paragraph, what made you feel that way?",
        :to=>[
@@ -103,7 +106,7 @@ class UsersController < ApplicationController
          }
        ],
        :html=>"<html><h1>Hi there,</h1><p>First, on a scale of 1-10, with 10 being happiest, what was your happiness score today?</p><p>Second, describe in a few sentences or a paragraph, what made you feel that way?</p></html>",
-       :from_email=>"happinesstrackerapp@gmail.com"
+       :from_email=>"1c8b3e27f70587dbda6b+#{new_entry.id}@cloudmailin.net"
       }
       m.messages.send message
       puts "sent email to #{user.email}"

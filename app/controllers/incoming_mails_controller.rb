@@ -3,6 +3,10 @@ class IncomingMailsController < ApplicationController
 
 
     puts "received email from #{params[:envelope][:from]}"
+    puts "disposable part #{params[:disposable]}"
+    
+	puts "body: #{params[:plain]}"
+
     render :text => 'Success', :status => 200
 
 
