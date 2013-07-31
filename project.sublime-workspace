@@ -268,7 +268,7 @@
 			"file": "app/controllers/users_controller.rb",
 			"settings":
 			{
-				"buffer_size": 2980,
+				"buffer_size": 3047,
 				"line_ending": "Unix"
 			}
 		},
@@ -276,7 +276,7 @@
 			"file": "app/controllers/incoming_mails_controller.rb",
 			"settings":
 			{
-				"buffer_size": 194,
+				"buffer_size": 273,
 				"line_ending": "Unix"
 			}
 		},
@@ -779,15 +779,15 @@
 					"file": "app/controllers/users_controller.rb",
 					"settings":
 					{
-						"buffer_size": 2980,
+						"buffer_size": 3047,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2090,
-								2090
+								2244,
+								2244
 							]
 						],
 						"settings":
@@ -808,15 +808,15 @@
 					"file": "app/controllers/incoming_mails_controller.rb",
 					"settings":
 					{
-						"buffer_size": 194,
+						"buffer_size": 273,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								135,
-								135
+								154,
+								154
 							]
 						],
 						"settings":
