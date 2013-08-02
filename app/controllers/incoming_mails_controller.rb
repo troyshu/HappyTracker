@@ -2,7 +2,7 @@ class IncomingMailsController < ApplicationController
   def create
 
 
-    #puts "received email from #{params[:envelope][:from]}"
+    puts "received email, in the create controller"
     entry_to_update = HappinessEntry.find(params[:disposable])
     
 	entry_to_update.description = "#{params[:plain]}"
