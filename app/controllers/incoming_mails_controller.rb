@@ -5,6 +5,7 @@ class IncomingMailsController < ApplicationController
   def create
 
   	puts "received email, in the create controller"
+  	puts "#{params}"
 
     entry_to_update = HappinessEntry.find(params[:disposable])
     
