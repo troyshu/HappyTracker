@@ -5,14 +5,14 @@ class IncomingMailsController < ApplicationController
   def create
 
   	puts "received email, in the create controller"
-  	puts "parameters are as follows: \n #{params}"
+  	puts "reply_plain: \n #{params[:reply_plain]}"
 
   	#extract happiness entry id
   	entry_id = /.*\+([0-9]+)@/.match(params[:envelope][:to])[1]
 
     entry_to_update = HappinessEntry.find(entry_id)
     
-	#entry_to_update.description = "#{params[:plain]}"
+	entry_to_update.description = "#{params[:reply_plain]}"
 
     # Do some other stuff with the mail message
 
