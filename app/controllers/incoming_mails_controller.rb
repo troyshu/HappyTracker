@@ -12,7 +12,7 @@ class IncomingMailsController < ApplicationController
 
     entry_to_update = HappinessEntry.find(entry_id)
 
-    reply_plain = parmas[:reply_plain]
+    reply_plain = params[:reply_plain]
 
     #parse out score
     reply_plain_matches = /^([0-9]+)\.(.*)/.match(reply_plain)
